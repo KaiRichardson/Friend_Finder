@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Customer Survey</title>
+
+    <link rel="stylesheet" href="assests/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assests/css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
+        <a class="navbar-brand">Friend Finder</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="home.html">Home</a>
+            <a class="nav-item nav-link active" href="survey.html">Survey<span class="sr-only">(current)</span></a>
+        </div>
+    </nav>
+
+    <!-- body -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-7">
+                <div class="jumbotron">
+                    <h1 class="display-4 text-center">Survey Questions</h1>
+                    <hr class="my-3">
+                    <h3 class="text-center">About You</h3>
+                    <form class="form">
+
+                        <div class="form-group">
+                            <label for="FormControlInput1">Name (Required)</label>
+                            <input type="name" class="form-control" id="FormControlInput1" placeholder="John Smith">
+                        </div>
+
+                        <br>
+                        <div class="form-group">
+                            <label for="FormControlInput1">Link to Photo Image (Required)</label>
+                            <input type="name" class="form-control" id="FormControlInput1"
+                                placeholder="https://image.com/photo">
+                        </div>
+                        <br>
+                        <br>
+
+                        <h3 class="text-center">Please Answer these 10 qiestions to find a friend!</h3>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">1. Your mind is always buzzing with
+                            unexplored ideas and plans.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">2. You rely more on your experience than
+                            your imagination.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">3. You find it easy to stay relaxed and
+                            focused even when under pressure.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">4. You rarely do something just out of sheer
+                            curiosity.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">5. People can rarely upset you.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">6. It is often difficult for you to relate
+                            to other people’s feelings.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">7. In a discussion, truth should be more
+                            important than people’s sensitivities.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">8. You rarely get carried away by fantasies
+                            and ideas.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">9. You think that everyone’s views should be
+                            respected regardless of whether they are supported by facts or not.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <label class="my-1 mr-2" for="FormCustomSelectPref">10. You feel more energetic after spending
+                            time with a group of people.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😣 (Strongly Disagree)</option>
+                            <option value="2">😒 (Disagree)</option>
+                            <option value="3">🤔 (Dont Know)</option>
+                            <option value="4">😊 (Agree)</option>
+                            <option value="5">😄 (Strongly Agree)</option>
+                        </select>
+                        <br>
+
+                        <br>
+                        <button type="submit" class="btn btn-primary my-1">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-copyright text-center py-3">Copyright ©</div>
+</body>
+
+</html>
