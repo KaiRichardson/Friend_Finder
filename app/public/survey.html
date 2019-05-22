@@ -32,18 +32,19 @@
                     <h1 class="display-4 text-center">Survey Questions</h1>
                     <hr class="my-3">
                     <h3 class="text-center">About You</h3>
-                    <form class="form">
+                    <form class="form" id="new_user_form">
 
                         <div class="form-group">
-                            <label for="FormControlInput1">Name (Required)</label>
-                            <input type="name" class="form-control" id="FormControlInput1" placeholder="John Smith">
+                            <label for="name-input">Name (Required)</label>
+                            <input type="name" class="form-control" id="user_name" placeholder="John Smith"
+                                name="user_name" required>
                         </div>
 
                         <br>
                         <div class="form-group">
-                            <label for="FormControlInput1">Link to Photo Image (Required)</label>
-                            <input type="name" class="form-control" id="FormControlInput1"
-                                placeholder="https://image.com/photo.jpg">
+                            <label for="photo-input">Link to Photo Image (Required)</label>
+                            <input type="url" class="form-control" id="user_photo"
+                                placeholder="https://image.com/photo.jpg" name="user_photo" required>
                         </div>
                         <br>
                         <br>
@@ -51,9 +52,9 @@
                         <h3 class="text-center">Please Answer these 10 qiestions to find a friend!</h3>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">1. Your mind is always buzzing with
+                        <label class="my-1 mr-2" for="question-1-input">1. Your mind is always buzzing with
                             unexplored ideas and plans.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_1" name="question_1" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -64,9 +65,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">2. You rely more on your experience than
+                        <label class="my-1 mr-2" for="question-2-input">2. You rely more on your experience than
                             your imagination.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_2" name="question_2" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -77,9 +78,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">3. You find it easy to stay relaxed and
+                        <label class="my-1 mr-2" for="question-3-input">3. You find it easy to stay relaxed and
                             focused even when under pressure.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_3" name="question_3" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -90,9 +91,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">4. You rarely do something just out of sheer
+                        <label class="my-1 mr-2" for="question-4-input">4. You rarely do something just out of sheer
                             curiosity.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_4" name="question_4" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -103,8 +104,8 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">5. People can rarely upset you.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <label class="my-1 mr-2" for="question-5-input">5. People can rarely upset you.</label>
+                        <select class="custom-select my-1 mr-sm-2" id="question_5" name="question_5" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -115,9 +116,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">6. It is often difficult for you to relate
+                        <label class="my-1 mr-2" for="question-6-input">6. It is often difficult for you to relate
                             to other people’s feelings.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_6" name="question_6" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -128,9 +129,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">7. In a discussion, truth should be more
+                        <label class="my-1 mr-2" for="question-7-input">7. In a discussion, truth should be more
                             important than people’s sensitivities.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_7" name="question_7" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -141,9 +142,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">8. You rarely get carried away by fantasies
+                        <label class="my-1 mr-2" for="question-8-input">8. You rarely get carried away by fantasies
                             and ideas.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_8" name="question_8" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -154,9 +155,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">9. You think that everyone’s views should be
+                        <label class="my-1 mr-2" for="question-9-input">9. You think that everyone’s views should be
                             respected regardless of whether they are supported by facts or not.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_9" name="question_9" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -167,9 +168,9 @@
                         <br>
 
                         <br>
-                        <label class="my-1 mr-2" for="FormCustomSelectPref">10. You feel more energetic after spending
+                        <label class="my-1 mr-2" for="question-10-input">10. You feel more energetic after spending
                             time with a group of people.</label>
-                        <select class="custom-select my-1 mr-sm-2" id="FormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="question_10" name="question_10" required>
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">😣 (Strongly Disagree)</option>
                             <option value="2">😒 (Disagree)</option>
@@ -180,7 +181,8 @@
                         <br>
 
                         <br>
-                        <button type="submit" class="btn btn-primary my-1">Submit</button>
+                        <button type="submit" class="btn btn-primary my-1" id="submit_btn"
+                            name="user_name">Submit</button>
                     </form>
                 </div>
             </div>
@@ -191,11 +193,45 @@
     <div class="footer-copyright text-center py-3">Copyright ©</div>
 
     <!-- JS scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
-    <script type="text/javascript" src="../data/friends.js"></script> 
-    <script type="text/javascript" src="../routing/apiRoutes.js"></script> 
-    <script type="text/javascript" src="../routing/htmlRoutes.js"></script> 
-    <script type="text/javascript" src="../../server.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+    <script>
+        $().ready(function () {
+            // Question: What does this code do?
+            $("#submit_btn").on("click", function (event) {
+                    $('select').each(function () {
+                        if ($(this).val() != "") {
+                            $(this).append.text("*Please compleate this form*")
+                        }
+                    });
+                event.preventDefault();
+
+                var newUser = {
+                    name: $('#user_name').val().trim(),
+                    photo: $('#user_photo').val().trim(),
+                    scores: [
+                        $('#question_1').val().trim(),
+                        $('#question_2').val().trim(),
+                        $('#question_3').val().trim(),
+                        $('#question_4').val().trim(),
+                        $('#question_5').val().trim(),
+                        $('#question_6').val().trim(),
+                        $('#question_7').val().trim(),
+                        $('#question_8').val().trim(),
+                        $('#question_9').val().trim(),
+                        $('#question_10').val().trim(),
+                    ]
+                };
+                console.log(newUser);
+
+                $.post("/api/friends", newUser).then(function (data) {
+                    console.log(data);
+                    alert("Adding character...");
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
