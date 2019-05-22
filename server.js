@@ -4,24 +4,27 @@ var path = require("path");
 // var { body,validationResult } = require('express-validator/check');
 // var { sanitizeBody } = require('express-validator/filter');
 
-
 // Set up Express App
 var app = express();
-var PORT = process.env.PORT || 3000; 
-var routes = require('./app/routing/htmlRoutes')(app);
+var PORT = process.env.PORT || 3000;
+var htmlRoutes = require("./app/routing/htmlRoutes");
+var apiRoutes = require("./app/routing/apiRoutes");
 
 // Express app handles data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Home page
+app.get("/home", htmlRoutes.home);
 
-app.get('/', function(req, res) {
-  res.write("Im listening for something...")
-  res.end();
-})
+// Survey page
+app.get("/survey", htmlRoutes.survey);
+
+// api calls
+app.get("/api/friends", apiRoutes.display);
+app.post("/api/friends", apiRoutes.add);
 
 // Starts the server to begin listening
 app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-  
+  console.log("App listening on PORT " + PORT);
+});

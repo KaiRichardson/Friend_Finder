@@ -1,13 +1,12 @@
-module.exports = function (app) {
+var express = require("express");
+var path = require("path");
 
-    // Displays home page
-    app.get('/home', function (req, res) {
-        res.sendFile(path.join(__dirname, "/public/home.html"));
-    });
+// Displays home page
+exports.home = function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/home.html"));
+};
 
-    // Displays survey page
-    app.get("/survey", function (req, res) {
-        res.sendFile(path.join(__dirname, "/public/survey.html"));
-    });
-
-}
+// Displays survey page
+exports.survey = function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/survey.html"));
+};

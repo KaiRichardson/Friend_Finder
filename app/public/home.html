@@ -1,43 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Home Page</title>
 
-    <link rel="stylesheet" href="assests/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assests/css/style.css">
-</head>
+    <link rel="stylesheet" href="assests/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assests/css/style.css" />
 
-<body>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
-        <a class="navbar-brand">Friend Finder</a>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="home.html">Home<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="survey.html">Survey</a>
-        </div>
+      <a class="navbar-brand">Friend Finder</a>
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/home"
+          >Home<span class="sr-only">(current)</span></a
+        >
+        <a class="nav-item nav-link" href="/survey">Survey</a>
+      </div>
     </nav>
 
     <!-- body -->
     <div class="container-fluid">
-        <div class="row justify-content-md-center">
-            <div class="col-md-7">
-                <div class="jumbotron">
-                    <h1 class="display-4 text-center">Find a Friend!</h1>
-                    <hr class="my-3">
-                </div>
-            </div>
+      <div class="row justify-content-md-center">
+        <div class="col-md-7">
+          <div class="jumbotron">
+            <h1 class="display-4 text-center">Find a Friend!</h1>
+            <hr class="my-3" />
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- footer -->
     <div class="footer-copyright text-center py-3">Copyright ©</div>
-</body>
 
+    <!-- JS scripts -->
+    <script type="text/javascript">
+      // Question: What does this code do?
+      $("#add-btn").on("click", function(event) {
+        event.preventDefault();
+
+        var newCharacter = {
+          name: $("#name")
+            .val()
+            .trim(),
+          role: $("#role")
+            .val()
+            .trim(),
+          age: $("#age")
+            .val()
+            .trim(),
+          forcePoints: $("#force-points")
+            .val()
+            .trim()
+        };
+
+        // Question: What does this code do??
+        $.post("/api/characters", newCharacter).then(function(data) {
+          console.log(data);
+          alert("Adding character...");
+        });
+      });
+    </script>
+  </body>
 </html>
