@@ -9,8 +9,7 @@
     <title>Customer Survey</title>
 
     <link rel="stylesheet" href="assests/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assests/css/style.css">
 </head>
 
@@ -36,15 +35,13 @@
 
                         <div class="form-group">
                             <label for="name-input">Name (Required)</label>
-                            <input type="name" class="form-control" id="user_name" placeholder="John Smith"
-                                name="user_name" required>
+                            <input type="name" class="form-control" id="user_name" placeholder="John Smith" name="user_name" required>
                         </div>
 
                         <br>
                         <div class="form-group">
                             <label for="photo-input">Link to Photo Image (Required)</label>
-                            <input type="url" class="form-control" id="user_photo"
-                                placeholder="https://image.com/photo.jpg" name="user_photo" required>
+                            <input type="url" class="form-control" id="user_photo" placeholder="https://image.com/photo.jpg" name="user_photo" required>
                         </div>
                         <br>
                         <br>
@@ -181,8 +178,7 @@
                         <br>
 
                         <br>
-                        <button type="submit" class="btn btn-primary my-1" id="submit_btn"
-                            name="user_name">Submit</button>
+                        <button type="submit" class="btn btn-primary my-1" id="submit_btn" name="user_name">Submit</button>
                     </form>
                 </div>
             </div>
@@ -197,14 +193,14 @@
 
 
     <script>
-        $().ready(function () {
+        $().ready(function() {
             // Question: What does this code do?
-            $("#submit_btn").on("click", function (event) {
-                    $('select').each(function () {
-                        if ($(this).val() != "") {
-                            $(this).append.text("*Please compleate this form*")
-                        }
-                    });
+            $("#submit_btn").on("click", function(event) {
+                $('select').each(function() {
+                    if ($(this).val() != "") {
+                        $(this).append.text("*Please compleate this form*")
+                    }
+                });
                 event.preventDefault();
 
                 var newUser = {
@@ -225,9 +221,24 @@
                 };
                 console.log(newUser);
 
-                $.post("/api/friends", newUser).then(function (data) {
-                    console.log(data);
-                    alert("Adding character...");
+                $.post("/api/friends", newUser, function(data) {
+                    // If a table is available... tell user they are booked.
+                    if (data) {
+                        alert("Yay! You are officially booked!");
+                    }
+
+                    // If a table is available... tell user they on the waiting list.
+                    else {
+                        alert("Sorry you are on the wait list");
+                    }
+
+                    // Clear the form when submitting
+                    $("#reserve-name").val("");
+                    $("#reserve-phone").val("");
+                    $("#reserve-email").val("");
+                    $("#reserve-unique-id").val("");
+
+
                 });
             });
         });

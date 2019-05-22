@@ -1,32 +1,19 @@
-var express = require("express");
-var path = require("path");
 var friendList = require("../data/friends");
-console.log(friendList);
 
-// Displays all friends
-exports.display = function(req, res) {
-  return res.json(friendList);
+module.exports = function(app) {
+  app.get("/api/tables", function(req, res) {
+    res.json(friendList);
+  });
+
+  app.post("/api/tables", function(req, res) {
+      friendList.push(req.body);
+      res.json(true);
+  });
+
+  app.post("/api/clear", function(req, res) {
+    // Empty out the arrays of data
+    friendList.length = 0;
+
+    res.json({ ok: true });
+  });
 };
-
-// Adds to friends obj
-exports.add = function(req, res) {
-  let newFriend = req.body;
-
-  newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-
-  console.log(newFriend);
-
-  friendList.push(newFriend);
-
-  res.json(newFriend);
-};
-
-//   function addFriend() {
-
-//   }
-
-//   function findFriend() {
-
-//       let friendScore = friends.scores;
-
-//   }

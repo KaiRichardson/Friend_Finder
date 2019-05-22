@@ -43,25 +43,6 @@
   <div class="footer-copyright text-center py-3">Copyright ©</div>
 
   <!-- JS scripts -->
-  <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function (event) {
-      event.preventDefault();
-
-      var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-      };
-
-      // Question: What does this code do??
-      $.post("/api/characters", newCharacter).then(function (data) {
-        console.log(data);
-        alert("Adding character...");
-      });
-    });
-  </script>
 </body>
 
 </html>
