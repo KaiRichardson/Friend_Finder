@@ -185,6 +185,25 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Your Friend!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- footer -->
     <div class="footer-copyright text-center py-3">Copyright ©</div>
 
@@ -194,57 +213,79 @@
 
 
     <script>
-        $().ready(function() {
-            // Question: What does this code do?
-            $("#submit_btn").on("click", function(event) {
-                $('select').each(function() {
-                    if ($(this).val() != "") {
-                        $(this).append.text("*Please compleate this form*")
-                    }
-                });
-                event.preventDefault();
+        // Question: What does this code do?
+        $("#submit_btn").on("click", function(event) {
+            event.preventDefault();
+            var prob = false;
+            $('select, input').each(function() {
+                // console.log(stuff);
+                if ($(this).val() !== "") {
+                    console.log($(this));
 
-                var newUser = {
-                    name: $('#user_name').val().trim(),
-                    photo: $('#user_photo').val().trim(),
-                    scores: [
-                        $('#question_1').val().trim(),
-                        $('#question_2').val().trim(),
-                        $('#question_3').val().trim(),
-                        $('#question_4').val().trim(),
-                        $('#question_5').val().trim(),
-                        $('#question_6').val().trim(),
-                        $('#question_7').val().trim(),
-                        $('#question_8').val().trim(),
-                        $('#question_9').val().trim(),
-                        $('#question_10').val().trim(),
-                    ]
-                };
-                console.log(newUser);
-
-                $.post("/api/friends", newUser, function(data) {
-                    // If a table is available... tell user they are booked.
-                    if (data) {
-                        alert("Yay! You are officially booked!");
-                    } else {
-                        alert("Sorry you are on the wait list");
-                    }
-
-                    // Clear the form when submitting
-                    $('#user_name').val("");
-                    $('#user_photo').val("");
-                    $('#question_1').val("");
-                    $('#question_2').val("");
-                    $('#question_3').val("");
-                    $('#question_4').val("");
-                    $('#question_5').val("");
-                    $('#question_6').val("");
-                    $('#question_7').val("");
-                    $('#question_8').val("");
-                    $('#question_9').val("");
-                    $('#question_10').val("");
-                });
+                    $(this).append("<div>*Please compleate this form*</div>")
+                    prob = true;
+                }
             });
+            if (prob) {
+                console.log("prob");
+
+                return;
+            }
+
+            var newUser = {
+                name: $('#user_name').val().trim(),
+                photo: $('#user_photo').val().trim(),
+                scores: [
+                    $('#question_1').val().trim(),
+                    $('#question_2').val().trim(),
+                    $('#question_3').val().trim(),
+                    $('#question_4').val().trim(),
+                    $('#question_5').val().trim(),
+                    $('#question_6').val().trim(),
+                    $('#question_7').val().trim(),
+                    $('#question_8').val().trim(),
+                    $('#question_9').val().trim(),
+                    $('#question_10').val().trim(),
+                ]
+            };
+            console.log(newUser);
+            model();
+
+            function model() {
+                $.post("/api/friends", newUser, function(res) {
+                    console.log(res);
+                    $(".friend-name").text(res.name);
+                    var photo = $("<img>").attr("src", res.photo);
+                    $(".modal-body").append(photo);
+                    $("img").css("width", "300px");
+                    $("img").css("height", "300px");
+                    $("#exampleModal").modal("toggle");
+                });
+
+                // $.post("/api/friends", newUser, function(data) {
+                //     // If a table is available... tell user they are booked.
+                //     if (data) {
+                //         alert("Yay! You are officially booked!");
+                //         $("#exampleModal").modal("toggle");
+                //     } else {
+                //         alert("Sorry no friends!");
+                //     }
+
+                //     // Clear the form when submitting
+                //     $('#user_name').val("");
+                //     $('#user_photo').val("");
+                //     $('#question_1').val("");
+                //     $('#question_2').val("");
+                //     $('#question_3').val("");
+                //     $('#question_4').val("");
+                //     $('#question_5').val("");
+                //     $('#question_6').val("");
+                //     $('#question_7').val("");
+                //     $('#question_8').val("");
+                //     $('#question_9').val("");
+                //     $('#question_10').val("");
+                // });
+            }
         });
     </script>
 </body>
